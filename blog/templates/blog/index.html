@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> </title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" type="text/css" href="{% static 'greetings/css/style.css' %}" />
+    {% verbatim %}
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    {% endverbatim %}
+</head>
+<body >
+  <div class="container-fluid" >
+    <div id="home" class="">
+              <form class="input-form text-center" name = "form"  method = "POST"  action="{% url 'greetings.views.greetings'%}">
+                  {% csrf_token %}
+                <h1> Create your wishes </h1>
+                  <input type="text" name = "username" placeholder="Enter your name"/>
+                  <select name="select">
+                      <option value=''>Please Choose your wish</option>
+                  </select>
+                  <br/>
+                  <input id="btn" type="submit" name="submit" value="Create"/>
+              </form>
+    </div>
+  </div>
+</body>
+</html>
